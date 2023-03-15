@@ -2,8 +2,8 @@ data "terraform_remote_state" "eks" {
   backend = "s3"
 
   config = {
-    bucket = "do4m-eks-argo-terraform"
-    key    = "k8-demo-eks.tfstate"
+    bucket = "do4m-eks-argo-tf"
+    key    = "do4m-eks-argo-tf.tfstate"
     region = "ap-southeast-1"
   }
 }

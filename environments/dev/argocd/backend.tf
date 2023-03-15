@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "do4m-eks-argo-terraform"
-    key    = "k8-demo-argocd.tfstate"
+    bucket = "do4m-eks-argo-tf"
+    key    = "do4m-eks-argo-tf.tfstate"
     region = "ap-southeast-1"
   }
 }

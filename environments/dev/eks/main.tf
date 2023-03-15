@@ -33,9 +33,9 @@ module "eks" {
 
   aws_auth_users = [
     {
-      userarn  = "arn:aws:iam::${local.account_id}:user/eksadmin"
-      username = "cluster-admin"
-      groups   = ["system:masters"]
+      userarn  = "arn:aws:iam::${local.account_id}:user/terradmin"
+      username = "terradmin"
+      # groups   = ["system:masters"]
     },
   ]
 
