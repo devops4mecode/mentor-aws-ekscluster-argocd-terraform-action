@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: test-apps
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/devops4mecode/mentor-aws-ekscluster-argocd-terraform-action.git
+      revision: HEAD
+      directories:
+      - path: sample-apps/git-dir-generators/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/devops4mecode/mentor-aws-ekscluster-argocd-terraform-action.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
