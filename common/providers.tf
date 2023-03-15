@@ -2,7 +2,7 @@ provider "aws" {
   region = "ap-southeast-1"
   default_tags {
     tags = {
-      Project   = "do4m-do4m-eks-cluster"
+      Project   = "do4m-eks-cluster"
       ManagedBy = "terraform"
     }
   }
