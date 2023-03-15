@@ -25,7 +25,7 @@ jobs:
       actions: read
       contents: read
     defaults:
-      run:
+      run: |
         working-directory: ${{ inputs.work-dir }}
     steps:
     - name: Configure AWS credentials
