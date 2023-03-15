@@ -4,13 +4,13 @@ on:
     branches:
       - master
   workflow_call:
-    inputs:
-      work-dir:
-        required: true
-        type: string
-      aws-region:
-        required: true
-        type: string  
+    # inputs:
+    #   work-dir:
+    #     required: true
+    #     type: string
+    #   aws-region:
+    #     required: true
+    #     type: string  
     secrets:
       CI_ROLE:
         required: true
@@ -32,7 +32,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: ${{ secrets.CI_ROLE }}
-        aws-region: ${{ inputs.aws-region }}
+        aws-region: ap-southeas-1
 
     - uses: actions/checkout@v3
     - uses: hashicorp/setup-terraform@v2
